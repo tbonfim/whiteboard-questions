@@ -1,3 +1,10 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    text-align: center;
+    margin: 2em 0;
+}
 ul{
     list-style: none;
     width: 70%;
@@ -34,5 +41,36 @@ children{
     position relative;
     top: 50%;
     left: 50%,
+    transform: translate(-50%, -50%);
+}*/
+
+#big-square-flex{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background: #116466;
+    margin: 0 auto;
+}
+#small-square-flex{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background: #D1E8E2;
+}
+
+#big-square-transform{
+    width: 400px;
+    height: 400px;
+    background: #D1E8E2;
+    margin: 0 auto;
+    position: relative;
+}
+#small-square-transform{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #116466;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
