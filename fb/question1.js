@@ -17,10 +17,10 @@ class DOMStore{
   }
   get(node){
     const foundNode = this.search(node);
-    if(foundNode.value === false) {
+    if(foundNode.value === false) { // scenario where foundNode value is false, we shouldnt return null
       return false;
     }
-    return foundNode && foundNode.value || null;
+    return foundNode && foundNode.value || null; //returns null when there's no node matching
   }
   set(node, value) {
     const foundNode = this.search(node);
