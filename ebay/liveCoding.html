@@ -1,0 +1,104 @@
+// In native Javacript, is there anything wrong with the following?
+// If so, how do you fix it?
+console.log(123);   
+
+// This function, called test, shows an alert
+var test = function() {
+    alert(111);
+}
+test();
+
+// Write a for loop in JS that prints 1 to 10
+for(let i=1 ; i <=10 ; i++) {
+    console.log(i);
+}
+
+/ Given this code, what don’t you like about it?
+// Can you improve or optimize it?
+
+function doTask(value) {
+    swtich(value){
+        case 'A':
+            setupA();
+            getFinalValue();
+        case 'B':
+            setupB();
+            calculateB();
+        case 'C':
+            setupC();
+            calculateC();
+        default:
+            setupElse();
+            getFinalValue();
+    }
+}
+
+function getFinalValue(){
+    createObject();
+    loadObject();
+    getFinalValue();
+}
+
+// Given this code, what don’t you like about it?
+// Can you improve or optimize it?
+
+const someContent = document.getElementsByClassName('some-content')[0]; // document.getElementByClass('some-content')[0];
+
+someContent.addClass('someClass');
+someContent.addClass('red');
+someContent.text('I am some content');
+
+const anotherContent = $('.another-content');
+anotherContent.removeClass('someClass');
+anotherContent.addClass('blue');
+anotherContent.text('I am some other content');
+
+someContent.append(anotherContent);
+
+
+
+// Write a function "addTwo" that prints the following.
+// You can use a browser for debugging.
+
+
+
+const addTwo = () => {
+    let result = 0;
+    return () =>{
+       result += 2;
+       return result
+    }
+};
+var a = addTwo();
+
+a(); // prints 2
+a(); // prints 4
+a(); // prints 6
+
+
+// Given the following html, write some JS to make it an image gallery, such that initially (0 sec), img1 is shown. 
+// At 1 sec, img2 is shown. At 2 sec, img3 is shown. At 3 sec, img 1 is shown. It loops until page reloads.
+// Then run the function. You can use jQuery and a browser for debugging.
+//
+// Note: The number of images can change, so your JS needs to be generic.
+/*
+<body>
+    <div class="wrapper" style="height: 100px; width: 100px">
+        <div class="img img1" style="height: 100px; width: 100px; background: red; display: block"></div>
+        <div class="img img2" style="height: 100px; width: 100px; background: yellow; display: none"></div>
+        <div class="img img3" style="height: 100px; width: 100px; background: blue; display: none"></div>
+    </div>
+</body>
+*/
+
+const imageGalery = () => {
+    const imageList = document.getElementsByClassName('img');
+    let count = 0;
+    setInterval( () => {
+        imageList[count].style('display', 'none');
+        count ++;
+        imageList[count].style('display', 'block');   
+    } , 1000);
+}
+
+imageGalery();

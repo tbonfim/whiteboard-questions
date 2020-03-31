@@ -1,0 +1,76 @@
+<!-- Html: desenha uma página com um header, dentro dele um título escrito "sports" à esquerda, 
+e um botão com um X à direita. Abaixo do header, uma listagem de links de artigos esportivos de acordo com a API 
+(vo colocar la em baixo), e abaixo dessa listagem, um botão pra dar refresh nesse conteúdo
+Css: faz o css disso tudo :D
+Js: o botão X do header tem que sumir com o conteúdo da página
+ (perguntei se era pra deletar do DOM ou só dar display none, ele falou tanto faz).
+  A listagem tem que ser populada dinamicamente com a API abaixo. E o botão de refresh dando refresh
+A api é: [
+{Id: 1, title: "article 1", link: "www.bomfimgostoso.com.br},
+... Repete
+]
+Só isso -->
+<body>
+  <header>
+    <h1>Sports</h1>
+    <a href="#" onclick="handleCloseButton()">X</a>
+  </header>
+  <div class="content">
+    <ul id="link-list">
+      <li><a href="http://link.com" target="blank">Link Desc</a></li>
+      <li><a href="http://link.com" target="blank">Link Desc</a></li>
+      <li><a href="http://link.com" target="blank">Link Desc</a></li>
+    </ul>
+    <a href="#" onclick="handleRefreshButton()">Refresh</a>
+  </div>
+</body>
+<script src="question2.js"></script>
+
+<style>
+body{
+  font-family: monospace;
+  background: #eee;
+  width: 80%;
+  margin: auto;
+}
+header{
+  overflow: hidden;
+}
+header > h1{
+  float: left;
+  width: 90%;
+}
+header > a {
+  float: left;
+  width: 10%;
+  text-align: right;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #bf3333;
+  margin-top: 15px;
+}
+#link-list {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#link-list > li > a{   
+  margin: 1em auto;
+  display: block;
+  text-decoration: none;
+  color: purple;
+}
+
+.content > a{
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 20%;
+  text-decoration: none;
+  color: green;
+  background: #ccc;
+  margin: auto;
+  width: 55px;
+  display: block;
+}
+</style>
